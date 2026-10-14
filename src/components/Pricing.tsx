@@ -17,11 +17,11 @@ export default function Pricing() {
         </p>
         <div className="max-w-[34rem]">
           <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">
-            Priced per pupil, so it fits the size of your school.
+            Pricing that fits your school.
           </h2>
           <p className="mt-4 text-lg text-ink-muted">
-            For a primary school of 400 pupils, that’s from $2,000 a term. Book
-            a walkthrough and we’ll give you the price for your school.
+            Larger schools get a price built around them. Talk to us and we’ll
+            find what works for yours.
           </p>
           <a href={walkthroughHref} className="btn-primary mt-8">
             Book a walkthrough
