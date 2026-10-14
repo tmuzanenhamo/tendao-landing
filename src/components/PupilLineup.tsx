@@ -9,8 +9,10 @@ const STEP_MS = 3000;
 // How long the line-up waits after somebody stops pointing before it carries on.
 const RESUME_MS = 4000;
 
-function randomOther(current: string) {
-  const others = pupils.filter((pupil) => pupil.slug !== current);
+function randomOther(current: string, phone: boolean) {
+  const others = pupils.filter(
+    (pupil) => pupil.slug !== current && (!phone || pupil.onPhone)
+  );
   return others[Math.floor(Math.random() * others.length)].slug;
 }
 
@@ -20,6 +22,7 @@ export default function PupilLineup() {
   const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(true);
+  const [phone, setPhone] = useState(false);
   const root = useRef<HTMLDivElement>(null);
   const resumeTimer = useRef<ReturnType<typeof setTimeout>>();
 
@@ -29,6 +32,14 @@ export default function PupilLineup() {
     const query = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReducedMotion(query.matches);
     const onChange = () => setReducedMotion(query.matches);
+    query.addEventListener('change', onChange);
+    return () => query.removeEventListener('change', onChange);
+  }, []);
+
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 767px)');
+    setPhone(query.matches);
+    const onChange = () => setPhone(query.matches);
     query.addEventListener('change', onChange);
     return () => query.removeEventListener('change', onChange);
   }, []);
@@ -49,10 +60,10 @@ export default function PupilLineup() {
     if (paused || !visible || reducedMotion) return;
     const timer = setInterval(() => {
       setUserControlled(false);
-      setSelected((current) => randomOther(current));
+      setSelected((current) => randomOther(current, phone));
     }, STEP_MS);
     return () => clearInterval(timer);
-  }, [paused, visible, reducedMotion]);
+  }, [paused, visible, reducedMotion, phone]);
 
   useEffect(() => () => clearTimeout(resumeTimer.current), []);
 
@@ -81,9 +92,9 @@ export default function PupilLineup() {
       }}
       className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_21rem] lg:items-end"
     >
-      <div className="-mx-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0">
+      <div className="pb-2 md:overflow-x-auto">
         <ul
-          className="flex min-w-[46rem] items-end justify-between gap-1 border-b-2 border-ink/80"
+          className="flex items-end justify-between gap-1 border-b-2 border-ink/80 md:min-w-[46rem]"
           aria-label="Pupils from ECD to Upper 6"
         >
           {pupils.map((each, index) => {
@@ -91,7 +102,7 @@ export default function PupilLineup() {
             return (
               <li
                 key={each.slug}
-                className="step-in flex h-[16rem] flex-1 items-end justify-center sm:h-[19rem] lg:h-[21rem]"
+                className={`step-in h-[16rem] flex-1 items-end justify-center sm:h-[19rem] md:flex lg:h-[21rem] ${each.onPhone ? 'flex' : 'hidden'}`}
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <button
@@ -120,12 +131,12 @@ export default function PupilLineup() {
             );
           })}
         </ul>
-        <ol className="mt-2 flex min-w-[46rem] justify-between gap-1">
+        <ol className="mt-2 flex justify-between gap-1 md:min-w-[46rem]">
           {pupils.map((each) => (
             <li
               key={each.slug}
               aria-hidden
-              className={`flex-1 text-center text-sm transition-colors duration-500 ${each.slug === selected ? 'font-semibold text-blazer' : 'text-ink-muted'}`}
+              className={`flex-1 text-center text-sm transition-colors duration-500 md:block ${each.onPhone ? '' : 'hidden'} ${each.slug === selected ? 'font-semibold text-blazer' : 'text-ink-muted'}`}
             >
               {each.year}
             </li>

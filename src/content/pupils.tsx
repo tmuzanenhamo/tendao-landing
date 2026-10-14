@@ -11,12 +11,15 @@ export type Pupil = {
   // Pixel width of the cut-out at 1300px tall, for next/image.
   width: number;
   alt: string;
+  // Shown on phones and small tablets, where only four fit side by side.
+  onPhone?: boolean;
   record: ReactNode;
 };
 
 export const pupils: Pupil[] = [
   {
     slug: 'ecd-girl',
+    onPhone: true,
     width: 428,
     name: 'Rudo',
     year: 'ECD B',
@@ -69,6 +72,7 @@ export const pupils: Pupil[] = [
   },
   {
     slug: 'grade-7-girl',
+    onPhone: true,
     width: 386,
     name: 'Chipo',
     year: 'Grade 7',
@@ -106,6 +110,7 @@ export const pupils: Pupil[] = [
   },
   {
     slug: 'form-4-girl',
+    onPhone: true,
     width: 409,
     name: 'Tariro',
     year: 'Form 4',
@@ -138,6 +143,7 @@ export const pupils: Pupil[] = [
   },
   {
     slug: 'upper-6-boy',
+    onPhone: true,
     width: 421,
     name: 'Tatenda',
     year: 'Upper 6',
