@@ -1,4 +1,5 @@
 import { walkthroughHref } from '@/site.config';
+import ShimmerOnView from './ShimmerOnView';
 
 export default function Pricing() {
   return (
@@ -9,7 +10,7 @@ export default function Pricing() {
             From as little as
           </span>
           <span className="block text-[6.5rem] font-extrabold tabular-nums leading-none tracking-[-0.03em] sm:text-[8.5rem]">
-            $5
+            <ShimmerOnView>$3</ShimmerOnView>
           </span>
           <span className="mt-2 block text-2xl font-bold">
             per pupil, per term

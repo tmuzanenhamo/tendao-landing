@@ -45,7 +45,7 @@ export default function Hero() {
               href="#pricing"
               className="font-semibold text-ink underline decoration-khaki decoration-2 underline-offset-4 hover:decoration-blazer"
             >
-              $5 per pupil, per term
+              $3 per pupil, per term
             </a>
             .
           </p>
