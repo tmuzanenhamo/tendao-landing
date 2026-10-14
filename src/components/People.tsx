@@ -50,10 +50,6 @@ export default function People() {
         <h2 className="max-w-[20ch] font-display text-4xl font-bold leading-tight tracking-[-0.01em] sm:text-5xl">
           Everyone at the school signs in to the same place.
         </h2>
-        <p className="mt-4 max-w-[36rem] text-ink-muted">
-          Heads, bursars, teachers, parents and pupils each get the screens
-          their role needs.
-        </p>
 
         <ul className="mt-14 grid gap-x-14 lg:grid-cols-2">
           {people.map((person) => (

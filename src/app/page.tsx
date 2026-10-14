@@ -23,14 +23,10 @@ export default function Home() {
 
         <section id="pupils" className="scroll-mt-8 py-20 sm:py-28">
           <div className="mx-auto max-w-page px-4 sm:px-6">
-            <h2 className="max-w-[22ch] font-display text-4xl font-bold leading-tight tracking-[-0.01em] sm:text-5xl">
+            <h2 className="mb-12 max-w-[22ch] font-display text-4xl font-bold leading-tight tracking-[-0.01em] sm:text-5xl">
               The four-year-old with a lunch box and the A Level student with a
               file.
             </h2>
-            <p className="mb-12 mt-4 max-w-[38rem] text-ink-muted">
-              Point at a pupil to see a piece of what Tendao keeps for them.
-              Each one is something Tendao does today.
-            </p>
             <PupilLineup />
           </div>
         </section>
