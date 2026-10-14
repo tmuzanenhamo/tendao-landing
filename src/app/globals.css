@@ -37,19 +37,35 @@
   }
 }
 
-/* The line-up's one entrance: pupils step in, youngest first. */
-@keyframes step-in {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
+/* The page's one moment on load: a band of badge gold passes once over the
+   headline and leaves it in ink. Without background-clip support the text
+   simply stays ink. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .shimmer-once {
+    background-image: linear-gradient(
+      110deg,
+      theme('colors.ink.DEFAULT') 0%,
+      theme('colors.ink.DEFAULT') 42%,
+      theme('colors.khaki.DEFAULT') 50%,
+      theme('colors.ink.DEFAULT') 58%,
+      theme('colors.ink.DEFAULT') 100%
+    );
+    background-size: 250% 100%;
+    background-position: 0% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: shimmer-once 1800ms cubic-bezier(0.4, 0, 0.2, 1) 400ms both;
   }
 }
-.step-in {
-  animation: step-in 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+@keyframes shimmer-once {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
 }
 
 /* The pupil's record swapping in, whether the line-up chose them or a visitor did. */

@@ -101,7 +101,7 @@ const beats: Beat[] = [
           school hall. You can see Tariro’s work in Tendao before you come.
           <p className="mt-1 text-right text-[11px] text-gray-500">18:02</p>
         </div>
-        <p className="mt-2 text-xs text-gray-500">Sent by SMS and WhatsApp</p>
+        <p className="mt-2 text-xs text-white/60">Sent by SMS and WhatsApp</p>
       </div>
     ),
   },
@@ -109,13 +109,16 @@ const beats: Beat[] = [
 
 export default function SchoolDay() {
   return (
-    <section id="day" className="scroll-mt-8 bg-chalk py-20 sm:py-28">
+    <section
+      id="day"
+      className="scroll-mt-8 bg-blazer-deep py-20 text-white sm:py-28"
+    >
       <div className="mx-auto grid max-w-page gap-12 px-4 sm:px-6 lg:grid-cols-[18rem_1fr] lg:gap-16">
         <div className="lg:sticky lg:top-12 lg:self-start">
           <h2 className="font-display text-4xl font-bold leading-tight tracking-[-0.01em] sm:text-5xl">
             One school day, one system.
           </h2>
-          <p className="mt-4 text-ink-muted">
+          <p className="mt-4 text-white/75">
             The register, the homework, the marks and the money all go into the
             same place, so nobody types the same pupil twice.
           </p>
@@ -129,17 +132,17 @@ export default function SchoolDay() {
             >
               <span
                 aria-hidden
-                className="absolute -left-[calc(2rem+7px)] top-3 h-3 w-3 rounded-full border-2 border-khaki bg-chalk sm:-left-[calc(3rem+7px)]"
+                className="absolute -left-[calc(2rem+7px)] top-3 h-3 w-3 rounded-full border-2 border-khaki bg-blazer-deep sm:-left-[calc(3rem+7px)]"
               />
               <div>
-                <p className="font-display text-3xl font-bold tabular-nums text-blazer">
+                <p className="font-display text-3xl font-bold tabular-nums text-khaki">
                   <time>{beat.time}</time>
                 </p>
                 <h3 className="mt-2 text-xl font-bold">{beat.title}</h3>
-                <p className="text-sm font-semibold text-khaki-deep">
+                <p className="text-sm font-semibold text-white/60">
                   {beat.who}
                 </p>
-                <p className="mt-3 max-w-prose text-ink-muted">{beat.body}</p>
+                <p className="mt-3 max-w-prose text-white/80">{beat.body}</p>
               </div>
               <div>{beat.shows}</div>
             </li>

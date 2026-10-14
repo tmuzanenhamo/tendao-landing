@@ -3,6 +3,7 @@ import Image from 'next/image';
 const people = [
   {
     slug: 'head',
+    width: 378,
     role: 'Heads',
     alt: 'A headmistress in a charcoal suit',
     points: [
@@ -13,6 +14,7 @@ const people = [
   },
   {
     slug: 'bursar',
+    width: 418,
     role: 'Bursars',
     alt: 'A bursar in a white shirt and tie holding a receipt book',
     points: [
@@ -23,6 +25,7 @@ const people = [
   },
   {
     slug: 'teacher',
+    width: 390,
     role: 'Teachers',
     alt: 'A teacher in a mustard blouse holding an open mark book',
     points: [
@@ -33,6 +36,7 @@ const people = [
   },
   {
     slug: 'parent',
+    width: 418,
     role: 'Parents',
     alt: 'A father in a checked shirt smiling at his phone',
     points: [
@@ -51,31 +55,27 @@ export default function People() {
           Everyone at the school signs in to the same place.
         </h2>
 
-        <ul className="mt-14 grid gap-x-14 lg:grid-cols-2">
+        <ul className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {people.map((person) => (
-            <li
-              key={person.slug}
-              className="grid grid-cols-[6.5rem_1fr] gap-6 border-t border-ink/15 py-8 sm:grid-cols-[8rem_1fr]"
-            >
-              <div className="relative h-36 overflow-hidden rounded-md bg-white sm:h-44">
+            <li key={person.slug}>
+              <div className="flex h-72 items-end justify-center border-b-2 border-ink/80 sm:h-80">
                 <Image
                   src={`/people/${person.slug}.webp`}
                   alt={person.alt}
-                  fill
-                  sizes="8rem"
-                  className="object-cover object-top"
+                  width={person.width}
+                  height={1300}
+                  sizes="(min-width: 640px) 110px, 100px"
+                  className="h-full w-auto"
                 />
               </div>
-              <div>
-                <h3 className="font-display text-2xl font-bold">
-                  {person.role}
-                </h3>
-                <ul className="mt-3 space-y-2 text-ink-muted">
-                  {person.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </div>
+              <h3 className="mt-5 font-display text-2xl font-bold">
+                {person.role}
+              </h3>
+              <ul className="mt-3 space-y-2 text-ink-muted">
+                {person.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>

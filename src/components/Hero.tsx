@@ -23,7 +23,7 @@ export default function Hero() {
 
       <div className="relative mx-auto w-full max-w-page px-4 sm:px-6">
         <div className="max-w-[34rem] pb-16 lg:max-w-[31rem] lg:py-32">
-          <h1 className="font-display text-[2.6rem] font-extrabold leading-[1.02] tracking-[-0.02em] sm:text-6xl lg:text-[4rem]">
+          <h1 className="shimmer-once font-display text-[2.6rem] font-extrabold leading-[1.02] tracking-[-0.02em] sm:text-6xl lg:text-[4rem]">
             Every pupil, from ECD to Upper&nbsp;6, in one register.
           </h1>
           <p className="mt-6 max-w-[30rem] text-lg leading-relaxed text-ink-muted sm:text-xl">

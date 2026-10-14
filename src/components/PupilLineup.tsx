@@ -97,13 +97,12 @@ export default function PupilLineup() {
           className="flex items-end justify-between gap-1 border-b-2 border-ink/80 md:min-w-[46rem]"
           aria-label="Pupils from ECD to Upper 6"
         >
-          {pupils.map((each, index) => {
+          {pupils.map((each) => {
             const active = each.slug === selected;
             return (
               <li
                 key={each.slug}
-                className={`step-in h-[16rem] flex-1 items-end justify-center sm:h-[19rem] md:flex lg:h-[21rem] ${each.onPhone ? 'flex' : 'hidden'}`}
-                style={{ animationDelay: `${index * 80}ms` }}
+                className={`h-[16rem] flex-1 items-end justify-center sm:h-[19rem] md:flex lg:h-[21rem] ${each.onPhone ? 'flex' : 'hidden'}`}
               >
                 <button
                   type="button"
