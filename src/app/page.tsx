@@ -2,6 +2,7 @@ import Closing from '@/components/Closing';
 import GettingStarted from '@/components/GettingStarted';
 import Hero from '@/components/Hero';
 import People from '@/components/People';
+import Pricing from '@/components/Pricing';
 import Phases from '@/components/Phases';
 import PupilLineup from '@/components/PupilLineup';
 import SchoolDay from '@/components/SchoolDay';
@@ -38,6 +39,7 @@ export default function Home() {
         <Phases />
         <People />
         <GettingStarted />
+        <Pricing />
       </main>
       <Closing />
     </>
