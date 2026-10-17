@@ -1,4 +1,5 @@
-import { walkthroughHref } from '@/site.config';
+import Link from 'next/link';
+import { bookHref } from '@/site.config';
 import ShimmerOnView from './ShimmerOnView';
 
 export default function Pricing() {
@@ -24,9 +25,14 @@ export default function Pricing() {
             Larger schools get a price built around them. Talk to us and we’ll
             find what works for yours.
           </p>
-          <a href={walkthroughHref} className="btn-primary mt-8">
-            Book a walkthrough
-          </a>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link href={bookHref} className="btn-primary">
+              Book a walkthrough
+            </Link>
+            <Link href="/pricing" className="btn-quiet">
+              How pricing works
+            </Link>
+          </div>
         </div>
       </div>
     </section>

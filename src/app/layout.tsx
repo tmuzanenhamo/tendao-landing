@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Bitter, Roboto, Source_Sans_3 } from 'next/font/google';
+import { site } from '@/site.config';
 import './globals.css';
 
 const bitter = Bitter({
@@ -20,11 +21,11 @@ const roboto = Roboto({
 
 const title = 'Tendao — your whole school day, in one place';
 const description =
-  'Marks, fees, attendance and homework for Zimbabwean primary and secondary schools, in one place. Parents hear about it by SMS and WhatsApp.';
+  'Marks, fees, attendance and homework for Zimbabwean primary and secondary schools, in one place. Parents follow their child’s work and fees from their phone.';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tendao-landing.vercel.app'),
-  title,
+  metadataBase: new URL(site.url),
+  title: { default: title, template: '%s | Tendao' },
   description,
   // What a link shared on WhatsApp or by email shows.
   openGraph: {
@@ -50,7 +51,15 @@ export default function RootLayout({
       lang="en-ZW"
       className={`${bitter.variable} ${sourceSans.variable} ${roboto.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <a
+          href="#main"
+          className="sr-only z-30 rounded-md bg-white px-4 py-2 font-semibold focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

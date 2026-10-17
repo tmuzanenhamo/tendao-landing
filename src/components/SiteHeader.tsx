@@ -1,20 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { walkthroughHref } from '@/site.config';
+import { bookHref, mainNav } from '@/site.config';
 
-const links = [
-  { href: '#pupils', label: 'Every pupil' },
-  { href: '#day', label: 'A school day' },
-  { href: '#phases', label: 'Primary and secondary' },
-  { href: '#people', label: 'Who uses it' },
-  { href: '#educator', label: 'AI help' },
-  { href: '#pricing', label: 'Pricing' },
-];
-
-export default function SiteHeader() {
+// On the home page the header sits over the hero's grey; everywhere else it
+// is an ordinary band at the top of the page.
+export default function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   return (
-    <header className="absolute inset-x-0 top-0 z-20">
-      <div className="mx-auto flex max-w-page items-center justify-between gap-6 px-4 py-4 sm:px-6">
+    <header
+      className={
+        overlay
+          ? 'absolute inset-x-0 top-0 z-20'
+          : 'relative z-20 border-b border-ink/10 bg-white'
+      }
+    >
+      <div className="mx-auto flex max-w-page items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2 rounded-md">
           <Image src="/logo.png" alt="" width={32} height={32} priority />
           <span className="font-display text-2xl font-extrabold tracking-tight">
@@ -22,25 +21,52 @@ export default function SiteHeader() {
           </span>
         </Link>
         <nav
-          aria-label="Sections"
-          className="hidden rounded-full bg-white/90 px-6 py-2.5 shadow-[0_1px_2px_rgba(22,36,30,0.08)] backdrop-blur lg:block"
+          aria-label="Main"
+          className={`hidden rounded-full px-6 py-2.5 lg:block ${overlay ? 'bg-white/90 shadow-[0_1px_2px_rgba(22,36,30,0.08)] backdrop-blur' : ''}`}
         >
           <ul className="flex gap-5 whitespace-nowrap text-[15px] font-semibold text-ink-muted xl:gap-7">
-            {links.map((link) => (
+            {mainNav.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="hover:text-ink">
+                <Link href={link.href} className="hover:text-ink">
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
-        <a
-          href={walkthroughHref}
-          className="btn-primary min-h-11 px-4 text-[15px]"
-        >
-          Book a walkthrough
-        </a>
+        <div className="flex items-center gap-2">
+          <Link
+            href={bookHref}
+            className="btn-primary min-h-11 px-4 text-[15px]"
+          >
+            Book a walkthrough
+          </Link>
+          {/* Below the desktop width the links fold into a menu. A details
+              element needs no script, and every page renders its own header,
+              so moving to another page closes it. */}
+          <details className="group relative lg:hidden">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center rounded-md border border-ink/20 bg-white px-3 font-semibold [&::-webkit-details-marker]:hidden">
+              Menu
+            </summary>
+            <nav
+              aria-label="Main"
+              className="absolute right-0 top-full mt-2 w-64 rounded-lg border border-ink/10 bg-white p-2 shadow-lg"
+            >
+              <ul>
+                {mainNav.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="flex min-h-11 items-center rounded-md px-3 font-semibold hover:bg-chalk"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </details>
+        </div>
       </div>
     </header>
   );

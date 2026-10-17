@@ -31,7 +31,7 @@ const people = [
     points: [
       'Write the term’s scheme of work and tick topics off as you teach them.',
       'Set work with attachments and short videos, and mark what comes back.',
-      'Download a mark sheet, fill it in, and upload it back.',
+      'Enter marks for your groups, and the term mark works itself out.',
     ],
   },
   {
@@ -42,7 +42,7 @@ const people = [
     points: [
       'See each child’s work exactly as the child sees it.',
       'Check the fee statement without phoning the office.',
-      'Get school messages by SMS and WhatsApp.',
+      'Get a text by SMS or WhatsApp when work is marked.',
     ],
   },
 ];
@@ -52,7 +52,7 @@ export default function People() {
     <section id="people" className="scroll-mt-8 bg-chalk py-20 sm:py-28">
       <div className="mx-auto max-w-page px-4 sm:px-6">
         <h2 className="max-w-[20ch] font-display text-4xl font-bold leading-tight tracking-[-0.01em] sm:text-5xl">
-          Everyone at the school signs in to the same place.
+          Each person gets their own view of the school day.
         </h2>
 
         <ul className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
