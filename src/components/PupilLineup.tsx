@@ -5,6 +5,13 @@ import { useEffect, useRef, useState } from 'react';
 import { pupils } from '@/content/pupils';
 
 const TALLEST = Math.max(...pupils.map((pupil) => pupil.height));
+// The chosen pupil grows by this much from their feet.
+const ACTIVE_SCALE = 1.04;
+// The tallest pupil fills only this share of the row, so when chosen they
+// still fit with a little room above: the row scrolls sideways from md up,
+// and a scroll box clips whatever rises above it too, which cut off the
+// Upper 6 pupil's head.
+const ROW_SHARE = 98 / ACTIVE_SCALE;
 const STEP_MS = 3000;
 // How long the line-up waits after somebody stops pointing before it carries on.
 const RESUME_MS = 4000;
@@ -119,8 +126,11 @@ export default function PupilLineup() {
                     width={each.width}
                     height={1300}
                     sizes="(min-width: 1024px) 140px, 110px"
-                    style={{ height: `${(each.height / TALLEST) * 100}%` }}
-                    className={`w-auto max-w-none origin-bottom transition duration-500 ease-out ${active ? 'scale-[1.04]' : 'opacity-80 saturate-[.55] group-hover:opacity-100 group-hover:saturate-100'}`}
+                    style={{
+                      height: `${(each.height / TALLEST) * ROW_SHARE}%`,
+                      transform: active ? `scale(${ACTIVE_SCALE})` : undefined,
+                    }}
+                    className={`w-auto max-w-none origin-bottom transition duration-500 ease-out ${active ? '' : 'opacity-80 saturate-[.55] group-hover:opacity-100 group-hover:saturate-100'}`}
                   />
                   <span className="sr-only">
                     {each.name}, {each.year}
