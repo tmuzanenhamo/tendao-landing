@@ -55,6 +55,8 @@ export const footerNav: { heading: string; links: NavLink[] }[] = [
         label: 'Tendao or spreadsheets',
       },
       { href: '/trust', label: 'Your school’s data' },
+      { href: '/terms', label: 'Terms of Service' },
+      { href: '/privacy', label: 'Privacy Policy' },
       { href: bookHref, label: 'Book a walkthrough' },
     ],
   },
