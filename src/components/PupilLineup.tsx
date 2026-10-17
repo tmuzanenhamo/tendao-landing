@@ -13,8 +13,6 @@ const ACTIVE_SCALE = 1.04;
 // Upper 6 pupil's head.
 const ROW_SHARE = 98 / ACTIVE_SCALE;
 const STEP_MS = 3000;
-// How long the line-up waits after somebody stops pointing before it carries on.
-const RESUME_MS = 4000;
 
 function randomOther(current: string, phone: boolean) {
   const others = pupils.filter(
@@ -26,12 +24,10 @@ function randomOther(current: string, phone: boolean) {
 export default function PupilLineup() {
   const [selected, setSelected] = useState('form-4-girl');
   const [userControlled, setUserControlled] = useState(false);
-  const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(true);
   const [phone, setPhone] = useState(false);
   const root = useRef<HTMLDivElement>(null);
-  const resumeTimer = useRef<ReturnType<typeof setTimeout>>();
 
   const pupil = pupils.find((each) => each.slug === selected) ?? pupils[0];
 
@@ -63,29 +59,17 @@ export default function PupilLineup() {
     return () => observer.disconnect();
   }, []);
 
+  // Once somebody has chosen a pupil, the line-up stays on their choice
+  // rather than moving on while they read it.
   useEffect(() => {
-    if (paused || !visible || reducedMotion) return;
+    if (userControlled || !visible || reducedMotion) return;
     const timer = setInterval(() => {
-      setUserControlled(false);
       setSelected((current) => randomOther(current, phone));
     }, STEP_MS);
     return () => clearInterval(timer);
-  }, [paused, visible, reducedMotion, phone]);
-
-  useEffect(() => () => clearTimeout(resumeTimer.current), []);
-
-  function pause() {
-    clearTimeout(resumeTimer.current);
-    setPaused(true);
-  }
-
-  function resumeSoon() {
-    clearTimeout(resumeTimer.current);
-    resumeTimer.current = setTimeout(() => setPaused(false), RESUME_MS);
-  }
+  }, [userControlled, visible, reducedMotion, phone]);
 
   function choose(slug: string) {
-    pause();
     setUserControlled(true);
     setSelected(slug);
   }
@@ -93,10 +77,6 @@ export default function PupilLineup() {
   return (
     <div
       ref={root}
-      onMouseLeave={resumeSoon}
-      onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) resumeSoon();
-      }}
       className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_21rem] lg:items-end"
     >
       <div className="pb-2 md:overflow-x-auto">
@@ -122,7 +102,7 @@ export default function PupilLineup() {
                 >
                   <Image
                     src={`/people/${each.slug}.webp`}
-                    alt={each.alt}
+                    alt=""
                     width={each.width}
                     height={1300}
                     sizes="(min-width: 1024px) 140px, 110px"

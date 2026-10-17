@@ -18,10 +18,28 @@ const roboto = Roboto({
   variable: '--font-roboto',
 });
 
+const title = 'Tendao — your whole school day, in one place';
+const description =
+  'Marks, fees, attendance and homework for Zimbabwean primary and secondary schools, in one place. Parents hear about it by SMS and WhatsApp.';
+
 export const metadata: Metadata = {
-  title: 'Tendao — one register for your whole school',
-  description:
-    'Marks, fees, attendance and homework for Zimbabwean primary and secondary schools, in one place. Parents hear about it by SMS and WhatsApp.',
+  metadataBase: new URL('https://tendao-landing.vercel.app'),
+  title,
+  description,
+  // What a link shared on WhatsApp or by email shows.
+  openGraph: {
+    title,
+    description,
+    type: 'website',
+    locale: 'en_ZW',
+    siteName: 'Tendao',
+    images: [
+      {
+        url: '/hero-classroom.jpg',
+        alt: 'A Form 4 pupil in a green blazer works in Tendao while a teacher helps two classmates',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

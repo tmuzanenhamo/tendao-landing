@@ -16,7 +16,7 @@ const beats: Beat[] = [
     title: 'The register is taken',
     body: 'Mark the class present or absent from a phone or a laptop. The office sees the same register straight away.',
     shows: (
-      <AppPanel title="Register" meta="Form 1 Blue · Tue 14 Oct">
+      <AppPanel title="Register" meta="Form 1 Blue · Wed 14 Oct">
         <Row
           label="Chikore, Tafadzwa"
           value={<Chip tone="green">Present</Chip>}
@@ -97,8 +97,8 @@ const beats: Beat[] = [
     shows: (
       <div className="font-app text-sm">
         <div className="max-w-[19rem] rounded-2xl rounded-bl-sm bg-green-50 px-4 py-3 text-gray-800">
-          Form 4 parents’ evening is on Thursday 23 October at 14:00 in the
-          school hall. You can see Tariro’s work in Tendao before you come.
+          Form 4 parents’ evening is on Friday 23 October at 14:00 in the school
+          hall. You can see Tariro’s work in Tendao before you come.
           <p className="mt-1 text-right text-[11px] text-gray-500">18:02</p>
         </div>
         <p className="mt-2 text-xs text-white/60">Sent by SMS and WhatsApp</p>
@@ -121,6 +121,9 @@ export default function SchoolDay() {
           <p className="mt-4 text-white/75">
             The register, the homework, the marks and the money all go into the
             same place, so nobody types the same pupil twice.
+          </p>
+          <p className="mt-4 text-sm text-white/60">
+            An example school day. The names and amounts are made up.
           </p>
         </div>
 

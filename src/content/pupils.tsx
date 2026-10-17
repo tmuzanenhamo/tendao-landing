@@ -10,7 +10,6 @@ export type Pupil = {
   height: number;
   // Pixel width of the cut-out at 1300px tall, for next/image.
   width: number;
-  alt: string;
   // Shown on phones and small tablets, where only four fit side by side.
   onPhone?: boolean;
   record: ReactNode;
@@ -25,7 +24,6 @@ export const pupils: Pupil[] = [
     year: 'ECD B',
     phase: 'Primary',
     height: 112,
-    alt: 'A young girl in a sky-blue school dress holding a yellow lunch box',
     record: (
       <AppPanel title="Attendance" meta="Term 3">
         <Row label="Days present" value="41 of 43" />
@@ -41,7 +39,6 @@ export const pupils: Pupil[] = [
     year: 'Grade 3',
     phase: 'Primary',
     height: 128,
-    alt: 'A boy in a khaki primary school uniform wearing a navy backpack',
     record: (
       <AppPanel title="Counting in fives" meta="Mathematics">
         <Row label="Opens" value="Mon 20 Oct, 08:00" />
@@ -60,7 +57,6 @@ export const pupils: Pupil[] = [
     year: 'Grade 5',
     phase: 'Primary',
     height: 139,
-    alt: 'A boy in a khaki uniform and navy jersey holding a football',
     record: (
       <AppPanel title="Fee statement" meta="Term 3 · USD">
         <Row label="Tuition" value="$150.00" />
@@ -78,7 +74,6 @@ export const pupils: Pupil[] = [
     year: 'Grade 7',
     phase: 'Primary',
     height: 151,
-    alt: 'A girl in a sky-blue dress and navy jersey holding a maths textbook',
     record: (
       <AppPanel title="Report card" meta="Term 2">
         <Row label="English" value="74" />
@@ -98,7 +93,6 @@ export const pupils: Pupil[] = [
     year: 'Form 1',
     phase: 'Secondary',
     height: 157,
-    alt: 'A boy in a bottle-green blazer with a backpack over one shoulder',
     record: (
       <AppPanel title="Today" meta="Form 1 Blue">
         <Row label="07:30" value="Mathematics" />
@@ -116,7 +110,6 @@ export const pupils: Pupil[] = [
     year: 'Form 4',
     phase: 'Secondary',
     height: 162,
-    alt: 'A girl in a bottle-green blazer holding exercise books',
     record: (
       <AppPanel title="Mathematics term mark" meta="ZIMSEC O Level">
         <Row label="Coursework 90 × 30%" value="27.0" />
@@ -132,7 +125,6 @@ export const pupils: Pupil[] = [
     year: 'Lower 6',
     phase: 'Secondary',
     height: 166,
-    alt: 'A girl in a maroon blazer holding a closed laptop',
     record: (
       <AppPanel title="Subject combination" meta="Cambridge AS">
         <Row label="Mathematics" value="L6 Maths A" />
@@ -149,7 +141,6 @@ export const pupils: Pupil[] = [
     year: 'Upper 6',
     phase: 'Secondary',
     height: 176,
-    alt: 'A tall young man in a maroon blazer carrying a lever-arch file',
     record: (
       <AppPanel title="Pupil at risk" meta="Chemistry Paper 2">
         <Row label="Last two terms" value="44, 41" />
