@@ -1,4 +1,5 @@
 import Closing from '@/components/Closing';
+import Educator from '@/components/Educator';
 import GettingStarted from '@/components/GettingStarted';
 import Hero from '@/components/Hero';
 import People from '@/components/People';
@@ -35,6 +36,7 @@ export default function Home() {
         <Phases />
         <People />
         <GettingStarted />
+        <Educator />
         <Pricing />
       </main>
       <Closing />
