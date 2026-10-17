@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { walkthroughHref } from '@/site.config';
+import Link from 'next/link';
+import { bookHref } from '@/site.config';
 
 export default function Hero() {
   return (
@@ -28,25 +29,25 @@ export default function Hero() {
           </h1>
           <p className="mt-6 max-w-[30rem] text-lg leading-relaxed text-ink-muted sm:text-xl">
             From ECD to Upper&nbsp;6, Tendao brings marks, fees, attendance and
-            homework together, and parents hear from the school by SMS and
-            WhatsApp.
+            homework together, and parents can follow their child’s work and
+            fees from their phone.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href={walkthroughHref} className="btn-primary">
+            <Link href={bookHref} className="btn-primary">
               Book a walkthrough
-            </a>
+            </Link>
             <a href="#day" className="btn-quiet px-1 sm:px-4">
               See a school day
             </a>
           </div>
           <p className="mt-5 text-ink-muted">
             From as little as{' '}
-            <a
-              href="#pricing"
+            <Link
+              href="/pricing"
               className="font-semibold text-ink underline decoration-khaki decoration-2 underline-offset-4 hover:decoration-blazer"
             >
               $3 per pupil, per term
-            </a>
+            </Link>
             .
           </p>
         </div>

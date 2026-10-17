@@ -12,13 +12,7 @@ import SiteHeader from '@/components/SiteHeader';
 export default function Home() {
   return (
     <>
-      <a
-        href="#main"
-        className="sr-only z-30 rounded-md bg-white px-4 py-2 font-semibold focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
-      >
-        Skip to content
-      </a>
-      <SiteHeader />
+      <SiteHeader overlay />
       <main id="main">
         <Hero />
 

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { ReactNode } from 'react';
 import AppPanel, { Chip, Row } from './fragments/AppPanel';
 
@@ -55,9 +56,9 @@ const beats: Beat[] = [
     time: '13:00',
     who: 'Subject teacher',
     title: 'Marks go in once',
-    body: 'Download the mark sheet as a spreadsheet, fill it in, and upload it back. Coursework and exams combine into the term mark using the weights your school sets.',
+    body: 'Teachers enter marks for the groups they teach. Coursework and exams combine into the term mark using the weights your school sets.',
     shows: (
-      <AppPanel title="Mark sheet" meta="Mathematics · Form 4 Blue">
+      <AppPanel title="Term marks" meta="Mathematics · Form 4 Blue">
         <div className="grid grid-cols-[1fr_auto_auto_auto] gap-x-4 gap-y-1.5 tabular-nums">
           <span className="text-xs text-gray-500">Pupil</span>
           <span className="text-xs text-gray-500">CA 30%</span>
@@ -81,7 +82,7 @@ const beats: Beat[] = [
     title: 'Fees are paid and receipted',
     body: 'Record a payment by cash, bank transfer, mobile money or card. The receipt prints at once, and the balance updates for the bursar and the parent.',
     shows: (
-      <AppPanel title="Receipt R-0412" meta="14 Oct 2026">
+      <AppPanel title="Receipt RCT-000412" meta="14 Oct 2026">
         <Row label="Pupil" value="Kudzai Mutasa, Grade 5" />
         <Row label="Method" value="Mobile money" />
         <Row label="Amount" value="$120.00" strong />
@@ -93,15 +94,15 @@ const beats: Beat[] = [
     time: '18:00',
     who: 'Parents',
     title: 'Home hears about it',
-    body: 'School messages and announcements reach parents by SMS and WhatsApp. A parent can open each child’s work and fee statement whenever they like.',
+    body: 'When a teacher marks a piece of work, the parent gets a text by SMS or WhatsApp. Announcements, each child’s work and the fee statement are waiting in Tendao whenever they look.',
     shows: (
       <div className="font-app text-sm">
         <div className="max-w-[19rem] rounded-2xl rounded-bl-sm bg-green-50 px-4 py-3 text-gray-800">
-          Form 4 parents’ evening is on Friday 23 October at 14:00 in the school
-          hall. You can see Tariro’s work in Tendao before you come.
+          Tariro’s Mathematics homework has been marked. Sign in to Tendao to
+          see her mark and her teacher’s feedback.
           <p className="mt-1 text-right text-[11px] text-gray-500">18:02</p>
         </div>
-        <p className="mt-2 text-xs text-white/60">Sent by SMS and WhatsApp</p>
+        <p className="mt-2 text-xs text-white/60">Sent by SMS or WhatsApp</p>
       </div>
     ),
   },
@@ -125,6 +126,12 @@ export default function SchoolDay() {
           <p className="mt-4 text-sm text-white/60">
             An example school day. The names and amounts are made up.
           </p>
+          <Link
+            href="/platform"
+            className="mt-6 inline-flex min-h-12 items-center font-semibold text-white underline decoration-khaki decoration-2 underline-offset-[6px] hover:decoration-white"
+          >
+            See the whole platform
+          </Link>
         </div>
 
         <ol className="relative border-l-2 border-khaki pl-8 sm:pl-12">

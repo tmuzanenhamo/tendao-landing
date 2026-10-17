@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { site, walkthroughHref } from '@/site.config';
+import SiteFooter from './SiteFooter';
 
 export default function Closing() {
   return (
@@ -43,18 +44,7 @@ export default function Closing() {
           </div>
         </div>
       </section>
-      <footer className="bg-blazer-deep text-white/75">
-        <div className="mx-auto flex max-w-page flex-wrap items-center justify-between gap-4 px-4 py-8 text-sm sm:px-6">
-          <p className="flex items-center gap-2">
-            <Image src="/logo.png" alt="" width={22} height={22} />
-            <span className="font-display text-base font-bold text-white">
-              Tendao
-            </span>
-            <span>School management for Zimbabwean schools</span>
-          </p>
-          <p>© 2026 Tendao</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

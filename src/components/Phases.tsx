@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import AppPanel, { Row } from './fragments/AppPanel';
 
@@ -25,8 +26,14 @@ export default function Phases() {
               <li>
                 Report cards print one page per pupil, ready to send home.
               </li>
-              <li>Grade against ZIMSEC scales.</li>
+              <li>
+                Grading scales set up the way your school grades, down to the
+                Grade 7 best-six aggregate.
+              </li>
             </ul>
+            <Link href="/schools/primary" className="btn-quiet mt-4 px-0">
+              Tendao for primary schools
+            </Link>
             <div className="mt-8 flex items-end gap-6">
               <Image
                 src="/people/grade-7-girl.webp"
@@ -60,13 +67,17 @@ export default function Phases() {
                 and work reach the right pupils.
               </li>
               <li>
-                ZIMSEC and Cambridge grading scales side by side in one school.
+                Set up ZIMSEC and Cambridge grading scales side by side in one
+                school.
               </li>
               <li>
-                Mark sheets go out and come back as spreadsheets, with centre
-                and candidate numbers.
+                Download a whole term’s marks as a spreadsheet, subject by
+                subject.
               </li>
             </ul>
+            <Link href="/schools/secondary" className="btn-quiet mt-4 px-0">
+              Tendao for secondary schools
+            </Link>
             <div className="mt-8 flex items-end gap-6">
               <Image
                 src="/people/upper-6-boy.webp"

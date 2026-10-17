@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import AppPanel, { Chip } from './fragments/AppPanel';
 
 // Only what is on Tendao's main branch (#406): the teacher assistant, marking
@@ -44,6 +45,9 @@ export default function Educator() {
           of work. So teachers can simply ask, and pupils get help the moment
           they are stuck, not at the next lesson.
         </p>
+        <Link href="/ai" className="btn-quiet mt-2 px-0">
+          How the AI help works, and its limits
+        </Link>
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-xl bg-ink/10 lg:grid-cols-2">
           <article className="bg-blazer-soft px-6 pb-10 pt-8 sm:px-10">

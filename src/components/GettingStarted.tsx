@@ -1,3 +1,4 @@
+import Link from 'next/link';
 const steps = [
   {
     title: 'Bring your roll',
@@ -31,6 +32,9 @@ export default function GettingStarted() {
             </li>
           ))}
         </ol>
+        <Link href="/getting-started" className="btn-quiet mt-10 px-0">
+          What to prepare before you start
+        </Link>
       </div>
     </section>
   );
