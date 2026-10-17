@@ -1,3 +1,4 @@
+import FaqItem from './FaqItem';
 import type { ReactNode } from 'react';
 
 export default function Faqs({
@@ -15,20 +16,9 @@ export default function Faqs({
         </h2>
         <div className="mt-8 max-w-[48rem] divide-y divide-ink/10 border-y border-ink/10">
           {items.map((item) => (
-            <details key={item.question} className="group py-1">
-              <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 text-lg font-semibold [&::-webkit-details-marker]:hidden">
-                {item.question}
-                <span
-                  aria-hidden
-                  className="text-2xl leading-none text-blazer transition-transform group-open:rotate-45"
-                >
-                  +
-                </span>
-              </summary>
-              <div className="max-w-prose space-y-3 pb-5 text-ink-muted">
-                {item.answer}
-              </div>
-            </details>
+            <FaqItem key={item.question} question={item.question}>
+              {item.answer}
+            </FaqItem>
           ))}
         </div>
       </div>

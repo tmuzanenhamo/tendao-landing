@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { bookHref, mainNav } from '@/site.config';
+import MobileMenu from './MobileMenu';
 
 // On the home page the header sits over the hero's grey; everywhere else it
 // is an ordinary band at the top of the page.
@@ -41,31 +42,7 @@ export default function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           >
             Book a walkthrough
           </Link>
-          {/* Below the desktop width the links fold into a menu. A details
-              element needs no script, and every page renders its own header,
-              so moving to another page closes it. */}
-          <details className="group relative lg:hidden">
-            <summary className="flex min-h-11 cursor-pointer list-none items-center rounded-md border border-ink/20 bg-white px-3 font-semibold [&::-webkit-details-marker]:hidden">
-              Menu
-            </summary>
-            <nav
-              aria-label="Main"
-              className="absolute right-0 top-full mt-2 w-64 rounded-lg border border-ink/10 bg-white p-2 shadow-lg"
-            >
-              <ul>
-                {mainNav.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="flex min-h-11 items-center rounded-md px-3 font-semibold hover:bg-chalk"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </details>
+          <MobileMenu />
         </div>
       </div>
     </header>
