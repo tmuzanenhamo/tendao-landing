@@ -9,7 +9,7 @@ export default function Faqs({
   items: { question: string; answer: ReactNode }[];
 }) {
   return (
-    <section className="bg-chalk py-16 sm:py-20">
+    <section className="bg-chalk py-12 sm:py-20">
       <div className="mx-auto max-w-page px-4 sm:px-6">
         <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">
           {title}

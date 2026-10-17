@@ -16,13 +16,13 @@ export default function Home() {
       <main id="main">
         <Hero />
 
-        <section id="pupils" className="scroll-mt-8 py-20 sm:py-28">
+        <section id="pupils" className="scroll-mt-8 py-14 sm:py-28">
           <div className="mx-auto max-w-page px-4 sm:px-6">
             <h2 className="max-w-[22ch] font-display text-4xl font-bold leading-tight tracking-[-0.01em] sm:text-5xl">
               The four-year-old with a lunch box and the A Level student with a
               file.
             </h2>
-            <p className="mb-12 mt-4 max-w-prose text-ink-muted">
+            <p className="mb-8 mt-4 max-w-prose text-ink-muted sm:mb-12">
               Choose a pupil to see an example from their school day. The names
               and records are made up.
             </p>

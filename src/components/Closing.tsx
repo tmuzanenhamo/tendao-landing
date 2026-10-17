@@ -6,8 +6,8 @@ export default function Closing() {
   return (
     <>
       <section className="relative overflow-hidden bg-blazer text-white">
-        <div className="mx-auto grid max-w-page items-end gap-10 px-4 pt-20 sm:px-6 lg:grid-cols-[1fr_auto]">
-          <div className="pb-20">
+        <div className="mx-auto grid max-w-page items-end gap-10 px-4 pt-14 sm:px-6 sm:pt-20 lg:grid-cols-[1fr_auto]">
+          <div className="pb-14 sm:pb-20">
             <h2 className="max-w-[16ch] font-display text-4xl font-bold leading-tight tracking-[-0.01em] sm:text-5xl">
               See Tendao with your own school in mind.
             </h2>

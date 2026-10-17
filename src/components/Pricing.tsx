@@ -4,7 +4,7 @@ import ShimmerOnView from './ShimmerOnView';
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="scroll-mt-8 bg-khaki-soft py-20 sm:py-24">
+    <section id="pricing" className="scroll-mt-8 bg-khaki-soft py-14 sm:py-24">
       <div className="mx-auto grid max-w-page items-center gap-10 px-4 sm:px-6 lg:grid-cols-[auto_1fr] lg:gap-20">
         <p className="font-display text-ink">
           <span className="block text-xl font-bold text-khaki-deep">

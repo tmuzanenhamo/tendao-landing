@@ -14,7 +14,7 @@ export const metadata = pageMetadata(
 export default function PricingPage() {
   return (
     <PageShell>
-      <section className="bg-khaki-soft py-16 sm:py-24">
+      <section className="bg-khaki-soft py-12 sm:py-24">
         <div className="mx-auto grid max-w-page items-center gap-10 px-4 sm:px-6 lg:grid-cols-[auto_1fr] lg:gap-20">
           <p className="font-display text-ink">
             <span className="block text-xl font-bold text-khaki-deep">
