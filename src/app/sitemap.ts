@@ -17,6 +17,8 @@ const paths = [
   '/compare/spreadsheets-and-whatsapp',
   '/trust',
   '/book-a-walkthrough',
+  '/terms',
+  '/privacy',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

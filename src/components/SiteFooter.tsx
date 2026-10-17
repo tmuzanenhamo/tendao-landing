@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { company } from '@/legal/details';
 import { footerNav, site } from '@/site.config';
 
 export default function SiteFooter() {
@@ -41,7 +42,10 @@ export default function SiteFooter() {
         ))}
       </div>
       <div className="mx-auto max-w-page border-t border-white/10 px-4 py-6 text-sm sm:px-6">
-        <p>© 2026 Tendao</p>
+        <p>
+          © 2026 Tendao. Tendao is provided by {company.name}, company number{' '}
+          {company.number}, {company.address}.
+        </p>
       </div>
     </footer>
   );
