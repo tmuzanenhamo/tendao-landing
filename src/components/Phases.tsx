@@ -4,13 +4,13 @@ import AppPanel, { Row } from './fragments/AppPanel';
 
 export default function Phases() {
   return (
-    <section id="phases" className="scroll-mt-8 py-14 sm:py-28">
+    <section id="phases" className="scroll-mt-8 py-20 sm:py-28">
       <div className="mx-auto max-w-page px-4 sm:px-6">
         <h2 className="max-w-[18ch] font-display text-4xl font-bold leading-tight tracking-[-0.01em] sm:text-5xl">
           Built for how primary and secondary schools really run.
         </h2>
 
-        <div className="mt-8 grid gap-px overflow-hidden rounded-xl bg-ink/10 sm:mt-14 lg:grid-cols-2">
+        <div className="mt-14 grid gap-px overflow-hidden rounded-xl bg-ink/10 lg:grid-cols-2">
           <article className="relative bg-khaki-soft px-6 pb-10 pt-8 sm:px-10">
             <p className="font-display text-lg font-bold text-khaki-deep">
               Primary school

@@ -35,7 +35,7 @@ function Bubble({
 
 export default function Educator() {
   return (
-    <section id="educator" className="scroll-mt-8 bg-chalk py-14 sm:py-28">
+    <section id="educator" className="scroll-mt-8 bg-chalk py-20 sm:py-28">
       <div className="mx-auto max-w-page px-4 sm:px-6">
         <h2 className="max-w-[22ch] font-display text-4xl font-bold leading-tight tracking-[-0.01em] sm:text-5xl">
           A second pair of hands for teachers. A patient tutor for pupils.
@@ -49,7 +49,7 @@ export default function Educator() {
           How the AI help works, and its limits
         </Link>
 
-        <div className="mt-8 grid gap-px overflow-hidden rounded-xl bg-ink/10 sm:mt-14 lg:grid-cols-2">
+        <div className="mt-14 grid gap-px overflow-hidden rounded-xl bg-ink/10 lg:grid-cols-2">
           <article className="bg-blazer-soft px-6 pb-10 pt-8 sm:px-10">
             <p className="font-display text-lg font-bold text-blazer">
               For teachers

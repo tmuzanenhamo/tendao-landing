@@ -16,7 +16,7 @@ export default function PageHero({
   action?: { href: string; label: string } | null;
 }) {
   return (
-    <section className="bg-chalk py-12 sm:py-24">
+    <section className="bg-chalk py-16 sm:py-24">
       <div
         className={`mx-auto grid max-w-page gap-12 px-4 sm:px-6 ${visual ? 'lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-center lg:gap-16' : ''}`}
       >
