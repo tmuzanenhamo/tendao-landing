@@ -9,8 +9,6 @@ export const metadata = {
     'Terms of Service',
     'The terms on which Snaprise Investments (Private) Limited provides Tendao to schools and their users.'
   ),
-  // Kept out of search results until the draft is final.
-  robots: { index: false },
 };
 
 export default function TermsPage() {
@@ -23,9 +21,8 @@ export default function TermsPage() {
       </p>
       <p>
         Our business and legal-service address is {company.address}. You can
-        contact us at <Field name="GENERAL_EMAIL" /> or{' '}
-        <Field name="BUSINESS_PHONE" />. Formal notices should be sent to{' '}
-        <Field name="LEGAL_EMAIL" /> and our legal-service address.
+        contact us at <Field name="GENERAL_EMAIL" />. Formal notices should be
+        sent to <Field name="LEGAL_EMAIL" /> and our legal-service address.
       </p>
       <p>
         In these terms, “Tendao,” “we,” “us” and “our” refer to that entity.
@@ -36,7 +33,8 @@ export default function TermsPage() {
       <h2>2. What these terms cover</h2>
       <p>
         These terms explain the conditions for access to Tendao’s website and
-        platform. Our Acceptable Use Policy and AI Use Policy form part of the
+        platform. Our AI Use Policy, set out on{' '}
+        <Link href="/ai">how the AI help works</Link>, forms part of the
         platform-use conditions.
       </p>
       <p>
@@ -110,7 +108,8 @@ export default function TermsPage() {
       </p>
       <p>
         If an account has been linked to the wrong child or an incorrect person
-        can see records, report this through Support immediately.
+        can see records, report this to <Field name="GENERAL_EMAIL" />{' '}
+        immediately.
       </p>
 
       <h2>6. What the service does</h2>
@@ -192,7 +191,8 @@ export default function TermsPage() {
 
       <h2>9. AI assistance</h2>
       <p>
-        AI features are governed by our AI Use Policy and the school’s enabled
+        AI features are governed by our AI Use Policy, set out on{' '}
+        <Link href="/ai">how the AI help works</Link>, and the school’s enabled
         settings.
       </p>
       <p>
@@ -253,12 +253,11 @@ export default function TermsPage() {
         cancellation or refund right takes priority over a less favourable
         contractual condition.
       </p>
-      <p>See our Cancellation and Refund Policy.</p>
 
       <h2>12. Support, maintenance and changes</h2>
       <p>
-        Support channels and hours are published on Support and any additional
-        arrangements are stated in the order.
+        Support is available by email at <Field name="GENERAL_EMAIL" />, and any
+        additional arrangements are stated in the order.
       </p>
       <p>
         We may maintain, repair or improve the service. We will give reasonable
@@ -439,10 +438,14 @@ export default function TermsPage() {
         <li>
           <Link href="/privacy">Privacy Policy</Link>
         </li>
-        <li>Acceptable Use Policy</li>
-        <li>AI Use Policy</li>
-        <li>Cancellation and Refund Policy</li>
-        <li>Support</li>
+
+        <li>
+          <Link href="/ai">How the AI help works</Link>
+        </li>
+
+        <li>
+          <Link href="/trust">Your school’s data</Link>
+        </li>
         <li>School-specific order and signed Data Processing Addendum</li>
       </ul>
     </LegalPage>

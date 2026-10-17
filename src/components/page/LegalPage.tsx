@@ -21,14 +21,19 @@ export default function LegalPage({
           <br />
           Version: <Field name="POLICY_VERSION" />
         </p>
-        {isDraft && (
+        {isDraft ? (
           <p
             role="note"
             className="mt-6 max-w-prose rounded-md border border-khaki bg-khaki-soft px-4 py-3 text-ink"
           >
             This is a draft and is not yet in force. Details marked “to be
-            confirmed” are still being settled, and the text is awaiting review
-            by a Zimbabwean lawyer.
+            confirmed” are still being settled.
+          </p>
+        ) : (
+          <p className="mt-6 max-w-prose text-sm text-ink-muted">
+            We are reviewing this document with Zimbabwean legal advisers. Any
+            changes will be published here with a new version number and
+            effective date, with notice where it is required.
           </p>
         )}
         <div className="legal mt-10 max-w-[44rem] text-ink-muted">

@@ -9,8 +9,6 @@ export const metadata = {
     'Privacy Policy',
     'How Snaprise Investments (Private) Limited handles personal information in Tendao, and the roles of Tendao and the school.'
   ),
-  // Kept out of search results until the draft is final.
-  robots: { index: false },
 };
 
 const roles = [
@@ -90,8 +88,8 @@ const grounds: [string, PendingField | string][] = [
     'Specific opt-in, subject to the applicable rules',
   ],
   [
-    'Non-essential website technologies, if deployed',
-    'The choices described in the Cookie Policy',
+    'Non-essential website technologies',
+    'Not applicable: this website sets none',
   ],
 ];
 
@@ -304,8 +302,11 @@ export default function PrivacyPage() {
       <h2>7. AI information</h2>
       <p>
         When an approved AI feature is used, relevant prompts, attachments and
-        limited school context may be processed by the providers identified in
-        the Provider Register.
+        limited school context are processed by our AI provider, Anthropic, in
+        the United States. Anthropic acts on our instructions under its
+        commercial terms and does not use this information to train its models.
+        The AI features stay off until the school’s administrator switches them
+        on.
       </p>
       <p>
         Teachers and school administrators can review pupil-tutor conversations
@@ -374,8 +375,11 @@ export default function PrivacyPage() {
         Support-access locations: <Field name="SUPPORT_ACCESS_LOCATIONS" />.
       </p>
       <p>
-        Provider-specific processing locations and remote-access arrangements
-        are listed in the Provider Register.
+        Some providers process information outside South Africa and Zimbabwe:
+        Anthropic in the United States for enabled AI features, and the SMS and
+        WhatsApp providers a school switches on for messages to parents,
+        including Meta for WhatsApp. Transfers out of Zimbabwe are made under
+        sections 28 and 29 of the Cyber and Data Protection Act.
       </p>
       <p>
         We assess international processing before enabling it and put the
@@ -474,11 +478,12 @@ export default function PrivacyPage() {
       </p>
       <p>
         When a personal-information incident occurs, we assess it, take
-        containment steps and make the notifications required of us. Where
-        acting as processor, we notify the school’s designated contact without
-        undue delay and cooperate so that the school can meet its own
-        obligations. We do not wait for a complete investigation before
-        providing available initial information.
+        containment steps and make the notifications required of us, including
+        notifying POTRAZ within 24 hours as section 19 of the Cyber and Data
+        Protection Act requires. Where acting as processor, we notify the
+        school’s designated contact without undue delay and cooperate so that
+        the school can meet its own obligations. We do not wait for a complete
+        investigation before providing available initial information.
       </p>
       <p>
         We do not claim independent certification, a particular encryption
@@ -519,9 +524,9 @@ export default function PrivacyPage() {
 
       <h2>13. Cookies, optional updates and external links</h2>
       <p>
-        Our Cookie Policy identifies website technologies and their purposes.
-        Optional analytics, marketing or embedded technologies are handled
-        according to the published choices.
+        This website does not use analytics, advertising or tracking cookies. If
+        that changes, we will say which technologies are used and offer a choice
+        before any optional ones are set.
       </p>
       <p>
         Optional Tendao marketing is separate from operational school
@@ -563,8 +568,6 @@ export default function PrivacyPage() {
         Email: <Field name="PRIVACY_EMAIL" />
         <br />
         Address: {company.address}
-        <br />
-        Phone: <Field name="BUSINESS_PHONE" />
       </p>
     </LegalPage>
   );
