@@ -2,20 +2,25 @@ import type { ReactNode } from 'react';
 import AppPanel from './fragments/AppPanel';
 
 // Only what is on Tendao's main branch (#406): the teacher assistant, marking
-// help, and the pupils' tutors, which are for secondary pupils only. Nothing
-// here may claim more than the app does.
+// help on the marking page, and the pupils' tutors, which every secondary
+// pupil has for each subject group and nobody has to create. Nothing here may
+// claim more than the app does.
 
-function Asked({ children }: { children: ReactNode }) {
+// Who is speaking is said in words as well as by colour and side, so a
+// screen reader can tell the question from the answer.
+function Asked({ who, children }: { who: string; children: ReactNode }) {
   return (
-    <p className="ml-auto max-w-[85%] rounded-2xl rounded-br-sm bg-sky-600 px-3 py-2 text-white">
+    <p className="ml-auto max-w-[85%] rounded-2xl rounded-br-sm bg-sky-700 px-3 py-2 text-white">
+      <span className="sr-only">{who}: </span>
       {children}
     </p>
   );
 }
 
-function Answered({ children }: { children: ReactNode }) {
+function Answered({ who, children }: { who: string; children: ReactNode }) {
   return (
     <p className="max-w-[85%] rounded-2xl rounded-bl-sm bg-gray-100 px-3 py-2">
+      <span className="sr-only">{who}: </span>
       {children}
     </p>
   );
@@ -49,16 +54,17 @@ export default function Educator() {
                 for you to change and set.
               </li>
               <li>
-                Get a suggested mark and feedback for a photo of handed-in work.
-                You check it and save the mark yourself.
+                On the marking page, get a suggested mark and feedback for a
+                photo of handed-in work. You check it and save the mark
+                yourself.
               </li>
             </ul>
             <AppPanel title="Ask Tendao" className="mt-8 w-full max-w-[22rem]">
               <div className="space-y-2">
-                <Asked>
+                <Asked who="Teacher">
                   Who in Form 4 Blue has not handed in Quadratic equations?
                 </Asked>
-                <Answered>
+                <Answered who="Tendao">
                   Two pupils have not handed it in yet: Farai Moyo and Kuda
                   Banda.
                 </Answered>
@@ -71,39 +77,39 @@ export default function Educator() {
               For pupils, Form 1 to Upper 6
             </p>
             <h3 className="mt-1 font-display text-3xl font-bold">
-              A tutor set up by their teacher
+              A tutor for every subject they take
             </h3>
             <ul className="mt-5 max-w-[30rem] space-y-2 text-ink-muted">
               <li>
-                A teacher sets up a tutor for a class’s subject, or for one
-                piece of work.
+                Each tutor knows what the class is learning this term. The
+                teacher can add their own instructions, or switch it off.
               </li>
               <li>
-                It works through a problem step by step, and does not give away
-                the answers to work that is marked.
+                It is told to help pupils find the answer one step at a time,
+                not to give it to them.
               </li>
               <li>Pupils can send a photo of their working.</li>
               <li>
-                Their teacher can read every conversation, and anything worrying
-                is marked for them.
+                Their teacher and the school office can read every conversation.
+                If a pupil seems unsafe, the conversation is flagged for their
+                teacher.
               </li>
             </ul>
-            <AppPanel
-              title="Mathematics tutor"
-              meta="Form 2 Blue"
-              className="mt-8 w-full max-w-[22rem]"
-            >
-              <div className="space-y-2">
-                <Asked>How do I start 3x + 5 = 20?</Asked>
-                <Answered>
-                  Start by taking 5 from both sides. What does that leave you
-                  with?
-                </Answered>
-              </div>
-              <p className="mt-3 text-xs text-gray-500">
+            <div className="mt-8 w-full max-w-[22rem] overflow-hidden rounded-lg border border-gray-200 bg-white font-app text-sm text-gray-800 shadow-[0_1px_0_rgba(22,36,30,0.04)]">
+              <p className="px-4 pt-4 text-[15px] font-semibold">
+                Mathematics tutor
+              </p>
+              <p className="mt-3 border-y border-gray-100 bg-amber-50 px-4 py-2 text-xs text-amber-800">
                 Your teacher can read these conversations.
               </p>
-            </AppPanel>
+              <div className="space-y-2 p-4">
+                <Asked who="Pupil">How do I solve 3x + 5 = 20?</Asked>
+                <Answered who="Tutor">
+                  Show me what you have tried so far, and we will check it one
+                  step at a time.
+                </Answered>
+              </div>
+            </div>
           </article>
         </div>
       </div>

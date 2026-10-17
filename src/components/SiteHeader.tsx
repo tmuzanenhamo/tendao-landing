@@ -7,7 +7,7 @@ const links = [
   { href: '#day', label: 'A school day' },
   { href: '#phases', label: 'Primary and secondary' },
   { href: '#people', label: 'Who uses it' },
-  { href: '#educator', label: 'Ask Tendao' },
+  { href: '#educator', label: 'AI help' },
   { href: '#pricing', label: 'Pricing' },
 ];
 
