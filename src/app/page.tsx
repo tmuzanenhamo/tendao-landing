@@ -35,8 +35,8 @@ export default function Home() {
         <SchoolDay />
         <Phases />
         <People />
-        <Educator />
         <GettingStarted />
+        <Educator />
         <Pricing />
       </main>
       <Closing />

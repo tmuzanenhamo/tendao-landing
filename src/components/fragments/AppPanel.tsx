@@ -6,11 +6,14 @@ import type { ReactNode } from 'react';
 export default function AppPanel({
   title,
   meta,
+  notice,
   children,
   className = '',
 }: {
   title: string;
   meta?: string;
+  /** A band across the panel under its title, as the app shows a notice. */
+  notice?: string;
   children: ReactNode;
   className?: string;
 }) {
@@ -22,6 +25,11 @@ export default function AppPanel({
         <p className="text-[15px] font-semibold">{title}</p>
         {meta && <p className="shrink-0 text-xs text-gray-500">{meta}</p>}
       </div>
+      {notice && (
+        <p className="-mx-4 mt-3 border-y border-gray-100 bg-amber-50 px-4 py-2 text-xs text-amber-800">
+          {notice}
+        </p>
+      )}
       <div className="mt-3">{children}</div>
     </div>
   );
