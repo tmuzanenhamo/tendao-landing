@@ -7,6 +7,7 @@ const links = [
   { href: '#day', label: 'A school day' },
   { href: '#phases', label: 'Primary and secondary' },
   { href: '#people', label: 'Who uses it' },
+  { href: '#educator', label: 'Ask Tendao' },
   { href: '#pricing', label: 'Pricing' },
 ];
 
@@ -24,7 +25,7 @@ export default function SiteHeader() {
           aria-label="Sections"
           className="hidden rounded-full bg-white/90 px-6 py-2.5 shadow-[0_1px_2px_rgba(22,36,30,0.08)] backdrop-blur lg:block"
         >
-          <ul className="flex gap-7 text-[15px] font-semibold text-ink-muted">
+          <ul className="flex gap-5 whitespace-nowrap text-[15px] font-semibold text-ink-muted xl:gap-7">
             {links.map((link) => (
               <li key={link.href}>
                 <a href={link.href} className="hover:text-ink">
