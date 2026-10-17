@@ -112,7 +112,7 @@ export default function SchoolDay() {
   return (
     <section
       id="day"
-      className="scroll-mt-8 bg-blazer-deep py-20 text-white sm:py-28"
+      className="scroll-mt-8 bg-blazer-deep py-14 text-white sm:py-28"
     >
       <div className="mx-auto grid max-w-page gap-12 px-4 sm:px-6 lg:grid-cols-[18rem_1fr] lg:gap-16">
         <div className="lg:sticky lg:top-12 lg:self-start">
