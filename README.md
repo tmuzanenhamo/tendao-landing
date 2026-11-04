@@ -22,8 +22,7 @@ npm run build
 ## Before going live
 
 `src/site.config.ts` holds the WhatsApp number and email behind every
-"Book a walkthrough" button. **They are placeholders** and must be replaced
-with real contact details.
+"Book a walkthrough" button. Confirm the email address receives mail.
 
 ## The address
 
