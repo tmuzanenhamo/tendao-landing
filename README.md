@@ -25,6 +25,12 @@ npm run build
 "Book a walkthrough" button. **They are placeholders** and must be replaced
 with real contact details.
 
+## The address
+
+`site.url` in `src/site.config.ts` is the address search engines are told to
+use, in every canonical, the sitemap and shared links. It must match the
+domain the site is served on. `next.config.mjs` sends the Vercel address there.
+
 ## Where things are
 
 | Path                        | What                                                          |

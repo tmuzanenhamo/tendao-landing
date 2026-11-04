@@ -7,7 +7,7 @@ import { pageMetadata } from '@/lib/page-metadata';
 
 export const metadata = pageMetadata(
   '/for-parents',
-  'For parents',
+  'Follow your child’s schoolwork and fees',
   'How parents use Tendao to see each child’s schoolwork, report cards, attendance and fee statement.'
 );
 
