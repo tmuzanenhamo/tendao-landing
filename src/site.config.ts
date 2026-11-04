@@ -1,9 +1,9 @@
-// TODO(owner): replace with the real number and address before this goes live.
+// TODO(owner): confirm the email address receives mail.
 // The WhatsApp number is international format without the plus.
 export const site = {
   name: 'Tendao',
   url: 'https://www.tendao.co.zw',
-  whatsapp: '263770000000',
+  whatsapp: '263773310120',
   email: 'hello@tendao.co.zw',
   walkthroughMessage:
     "Hello, I'd like to book a Tendao walkthrough for our school.",
