@@ -2,7 +2,7 @@
 // The WhatsApp number is international format without the plus.
 export const site = {
   name: 'Tendao',
-  url: 'https://tendao-landing.vercel.app',
+  url: 'https://www.tendao.co.zw',
   whatsapp: '263770000000',
   email: 'hello@tendao.co.zw',
   walkthroughMessage:

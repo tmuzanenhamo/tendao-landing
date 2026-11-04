@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Closing from '@/components/Closing';
 import Educator from '@/components/Educator';
 import GettingStarted from '@/components/GettingStarted';
@@ -8,10 +9,18 @@ import Phases from '@/components/Phases';
 import PupilLineup from '@/components/PupilLineup';
 import SchoolDay from '@/components/SchoolDay';
 import SiteHeader from '@/components/SiteHeader';
+import StructuredData from '@/components/StructuredData';
+import { homeDescription, homeTitle, sharePreview } from '@/lib/page-metadata';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+  openGraph: sharePreview(homeTitle, homeDescription, '/'),
+};
 
 export default function Home() {
   return (
     <>
+      <StructuredData />
       <SiteHeader overlay />
       <main id="main">
         <Hero />

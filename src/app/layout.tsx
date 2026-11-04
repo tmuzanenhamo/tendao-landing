@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Bitter, Roboto, Source_Sans_3 } from 'next/font/google';
+import { homeDescription, homeTitle, sharePreview } from '@/lib/page-metadata';
 import { site } from '@/site.config';
 import './globals.css';
 
@@ -19,28 +20,11 @@ const roboto = Roboto({
   variable: '--font-roboto',
 });
 
-const title = 'Tendao — your whole school day, in one place';
-const description =
-  'Marks, fees, attendance and homework for Zimbabwean primary and secondary schools, in one place. Parents follow their child’s work and fees from their phone.';
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: title, template: '%s | Tendao' },
-  description,
-  // What a link shared on WhatsApp or by email shows.
-  openGraph: {
-    title,
-    description,
-    type: 'website',
-    locale: 'en_ZW',
-    siteName: 'Tendao',
-    images: [
-      {
-        url: '/hero-classroom.jpg',
-        alt: 'A Form 4 pupil in a green blazer works in Tendao while a teacher helps two classmates',
-      },
-    ],
-  },
+  title: { default: homeTitle, template: '%s | Tendao' },
+  description: homeDescription,
+  openGraph: sharePreview(homeTitle, homeDescription),
 };
 
 export default function RootLayout({

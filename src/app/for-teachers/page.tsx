@@ -5,7 +5,7 @@ import { pageMetadata } from '@/lib/page-metadata';
 
 export const metadata = pageMetadata(
   '/for-teachers',
-  'For teachers',
+  'Schemes of work, marking and registers for teachers',
   'Schemes of work, homework with files and videos, marking, registers, pupils at risk and AI help that leaves the final say with the teacher.'
 );
 

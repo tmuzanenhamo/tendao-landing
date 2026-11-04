@@ -6,7 +6,7 @@ import { pageMetadata } from '@/lib/page-metadata';
 
 export const metadata = pageMetadata(
   '/platform',
-  'The platform',
+  'School management platform',
   'Attendance, homework, marks, report cards, fees and parent access for Zimbabwean primary and secondary schools, all from the same pupil records.'
 );
 
